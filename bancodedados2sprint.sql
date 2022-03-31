@@ -1,6 +1,6 @@
-CREATE DATABASE New_Employee;
+CREATE DATABASE COLDTIME;
 
-USE New_Employee;
+USE COLDTIME;
 
 CREATE TABLE clientes (
 	idEmpresa int primary key auto_increment,
