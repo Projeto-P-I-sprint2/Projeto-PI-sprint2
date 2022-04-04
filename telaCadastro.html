@@ -8,19 +8,55 @@
     <link rel="stylesheet" href="telaCadastro.css">
 </head>
 <body>
-<div class=".container">
-    <div class="box">
-        <div class="interação">
-        <h1>Cadastro de novo usuário.</h1>
-        email: <input class="email"> <br>
-        <br>
-        senha: <input type="password"> <br>
-        <br>
-        confirmar senha:<input type="password">
-         <br>
+    <div class="container">
+        <div class="box"> 
+            <div class="card">
+            <form>
+                <h1 style="margin-left: 40px; font-size: 30px;">
+                    Cadastro de usuário.</h1>
+                    <!-- empresa, cnpj, email, telefone,representante, senha,
+                    Csenha, cep, rua,bairro, cidade, complemento -->
+                    <label for="empresa_input">Empresa: </label>
+                    <input id="empresa_input">
+                    <br>
+                    <label for="cnpj_input">CNPJ: </label>
+                    <input type="number" id="cnpj_input">
+                    <br>
+                    <label for="email_input">E-mail: </label>
+                    <input id="email_input">
+                    <br>
+                    <label for="telefone_input">Telefone: </label>
+                    <input type="number" id="telefone_input">
+                    <br>
+                    <label for="representante_input">Representante</label>
+                    <input id="representante_input">
+                    <br>
+                    <label for="senha_input">Senha: </label>
+                    <input type="password" id="senha_input">
+                    <br>
+                    <label for="Csenha_input">Confirmar senha: </label>
+                    <input type="password" id="Csenha_input">
+                    <br>
+                    <label for="cep_input">CEP: </label>
+                    <input type="number" id="cep_input">
+                    <br>
+                    <label for="cidade_input">Cidade: </label>
+                    <input id="cidade_input">
+                    <br>
+                    <label for="bairro_input">Bairro:</label>
+                    <input id="bairro_input">
+                    <br>
+                    <label for="rua_input">Rua:</label>
+                    <input id="rua_input">
+                    <br>
+                    <label for="complementos_input">Complemento: </label>
+                    <input id="complementos_input">
+                    <br>
+                    <button type="button">Cadastrar-se</button>
+            </form>
         </div>
-
-    </div>
+        </div>
+    </div>    
 
 </div> 
 </body>
