@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+            <img style="width: 150px; margin-bottom: 10px;" src="https://logosmarcas.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png">
+            <br>
+            <p class="tituloInput">Quantidade de Funcionários 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="funcionario()">
+            </p><input id="quantidadeFuncionarios">
+            <p class="tituloInput">Jornada 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="jornada()">
+            </p><input id="horasTrabalhados">
+            <p class="tituloInput">Dias Trabalhados 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="dTrabalho()">
+            </p><input id="diasTrabalhados">
+            <p class="tituloInput">Quantidade de Faltas 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="qntdFalta()">
+            </p><input id="qntdFaltasFunc">
+            <p class="tituloInput">Minutos Perdidos 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="mPerdido()">
+            </p><input id="atrasoFuncionario">
+            <p class="tituloInput"> Produto/Serviço
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="proServ()">
+            </p><input id="quantidadeServicoProduto">
+            <button onclick="calcular()">
+                Calcular
+            </button>
+        </div>
+        <div class="container2">
+            <div class="caixa">
+                <div class="caixa1">
+                    <div class="titulo">
+                        Horas de Abstenção no mês
+                    </div>
+                    <div class="content">
+                        <div class="dados" id="HorasA">Aguardando sua confirmação.</div>
+                    </div>
+                </div>
+                <div class="caixa1">
+                    <div class="titulo">
+                        Horas de Abstenção no Ano
+                    </div>
+                    <div class="content">
+                        <div class="dados" id="HorasAM">Aguardando sua confirmação.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="caixa diferente">
+                <div class="caixa2">
+                    <div class="box1">
+                        <div class="titulo">
+                            Porcentagem de absenteísmo
+                        </div>
+                        <div class="content">
+                            <div class="dados" id="Absenteismo"></div>
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <div class="titulo">
+                            Produtividade
+                        </div>
+                        <div class="content">
+                            <div class="dados" id="Produtividade"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
