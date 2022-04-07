@@ -11,7 +11,7 @@ body {
 .header{
     background-color: white;
     color: #6B39C3;
-    box-shadow: 5px 4px 5px 5px gray;
+    box-shadow: 3px 4px 3px 3px rgb(141, 141, 141);
 }
 
 .containerHeader{
