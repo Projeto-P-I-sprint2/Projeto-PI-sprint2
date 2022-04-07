@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de login estática.</title>
+    <title>COMPROD | Login</title>
     <link rel="stylesheet" href="telaLogin.css">
 </head>
+
 <body>
-<div class="container">
-    <div class="box"> 
-        <div class="card">
-        <h1 style="margin-left: 65px;">Login de usuário.</h1>
-        <form>
-            <label for="email_input">Email: </label>
-            <input id="email_input"> <br>
-            <br>
-            <label for="senha_input">Senha: </label>
-            <input type="password" id="senha_input"> <br>
-            <br>
-            <button type="button">Entrar.</button>
-            <br>
-            <br>
-            <div class="navbar">
-            <li><a href="">Esqueceu sua senha?</a></li>
-            <br>
-            <li><a href="telaCadastro.html">cadraste-se</a></li>
+    <div class="corpo">
+        <div class="header">
+            <div class="containerHeader">
+                <h1>
+                    COMPROD
+                </h1>
+
+                <ul class="navbar">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="contatos.html">Contatos</a></li>
+                    <li><a href="simulador.html">Simulador</a></li>
+                    <li><a href="simulador.html">Sobre</a></li>
+                    <li class=""><a href="telaLogin..html" class="agora">Login</a></li>
+                    <li class="btn_"><a href="telaCadastro.html" class="btn_cad">Cadastro</a></li>
+                </ul>
             </div>
-        </form>
+        </div>
     </div>
+    <div class="container">
+        <div class="card">
+            <h1>Login</h1>
+            <form>
+                <div class="filha">
+                    <input type="email" id="email_input" placeholder="E-mail">
+                </div>
+                <div class="filha">
+                    <input type="password" id="senha_input" placeholder="Senha">
+                </div>
+                <div class="filha">
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+                <div class="filha">
+                    <button type="button">Login</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>    
 </body>
+
 </html>
