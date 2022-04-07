@@ -90,7 +90,7 @@ a.btn_cad{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 70px;
+    margin: 100px 0;
     width: 500px;
     border-radius: 20px;
     padding: 20px;
