@@ -4,39 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadraste-se na @nome_empresa.</title>
+    <title>COMPROD | Cadrastro</title>
     <link rel="stylesheet" href="telaCadastro.css">
 </head>
 <body>
+    <div class="corpo">
+        <div class="header">
+            <div class="containerHeader">
+                <h1>
+                    COMPROD
+                </h1>
+     
+                <ul class="navbar">
+                    <li ><a href="index.html" class="agora">Inicio</a></li>
+                    <li><a href="contatos.html">Contatos</a></li>
+                    <li><a href="simulador.html">Simulador</a></li>
+                    <li><a href="simulador.html">Sobre</a></li>
+                    <li class=""><a href="telaLogin..html">Login</a></li>
+                    <li class="btn_"><a href="telaCadastro.html" class="btn_cad">Cadastro</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container">
-        <div class="box"> 
-            <div class="card">
+        <div class="card">
+            <h1>Cadastro de usuário</h1>
             <form>
-                <h1 style="margin-left: 40px; font-size: 30px;">
-                    Cadastro de usuário.</h1>
-                    <!-- empresa, cnpj, email, telefone, senha,
-                    Csenha, cep -->
-                    <label for="empresa_input">Empresa: </label>
-                    <input id="empresa_input">
-                    <br>
-                    <label for="cnpj_input">CNPJ: </label>
-                    <input id="cnpj_input">
-                    <br>
-                    <label for="email_input">E-mail: </label>
-                    <input id="email_input">
-                    <br>
-                     
-                    <label for="senha_input">Senha: </label>
-                    <input type="password" id="senha_input">
-                    <br>
-                    <label for="Csenha_input">Confirmar senha: </label>
-                    <input type="password" id="Csenha_input"><br>
+                <div class="filha">
+                    <input id="empresa_input" placeholder="Empresa">
+                </div>
+                <div class="filha">
+                    <input id="cnpj_input" placeholder="CNPJ">
+                </div>
+                <div class="filha">
+                    <input type="email" id="email_input" placeholder="E-mail">
+                </div>
+                <div class="filha">
+                    <input type="password" id="senha_input" placeholder="Senha">
+                </div>
+                <div class="filha">
+                    <input type="password" id="Csenha_input" placeholder="Confirmar senha">
+                </div>
+                <div class="filha">
                     <button type="button">Cadastrar</button>
+                </div>                 
             </form>
         </div>
-        </div>
-    </div>    
-
-</div> 
+    </div> 
 </body>
 </html>
