@@ -1,6 +1,6 @@
-#COMPROD
+# COMPROD
 
-___INTEGRANTES:__
+__INTEGRANTES:__
 
 - Diogo Nunes (https://github.com/dihnunes)
 - Endryl Fiorotti (https://github.com/EndrylFiorotti)
