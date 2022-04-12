@@ -34,10 +34,12 @@ body{
     margin:0 auto ;
     
 }
+
 .header .container{
     display: flex;
     justify-content:space-between;
 }
+
 .banner .container.login ,.container.cadastro{
     justify-content: center;
 }
@@ -70,11 +72,13 @@ body{
     padding: 10px 20px;
     color: white;
 }
+
 .agora{
     
     color: white !important;
     background-color: #2d086e;
 }
+
 a.btn_cad{
     text-decoration: none;
     margin-top: 2%;
@@ -86,7 +90,6 @@ a.btn_cad{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
 }
 
 .banner{
@@ -106,6 +109,7 @@ a.btn_cad{
     padding-top: 60px;
     font-size: 50px;
 }
+
 .banner .container p{
     padding-top: 20px;
     padding-left: 60px;
@@ -123,6 +127,7 @@ a.btn_cad{
     color: black;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .banner .container button:hover{
@@ -151,6 +156,7 @@ a.btn_cad{
     align-items: center;
     background-color: white;
 }
+
 .corpo .container .card img{
     width: 80%;
 }
@@ -176,6 +182,7 @@ a.btn_cad{
     color: black;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .corpo .container .card button:hover{
