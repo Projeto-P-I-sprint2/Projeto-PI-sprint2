@@ -189,3 +189,21 @@ a.btn_cad{
     background-color: #b57eba;
     color: white;
 }
+
+
+
+#span_button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#mybutton {
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background-color: #6B39C3;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
