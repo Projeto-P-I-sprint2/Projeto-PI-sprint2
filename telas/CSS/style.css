@@ -125,6 +125,11 @@ a.btn_cad{
     font-weight: bold;
 }
 
+.banner .container button:hover{
+    background-color: #b57eba;
+    color: white;
+}
+
 .corpo{
     background-color: #FBFBFB;
 }
@@ -157,6 +162,7 @@ a.btn_cad{
 .corpo .container .card p{
     margin: 5px;
     text-align: center;
+    font-size: 14px;
 }
 
 .corpo .container .card button{
@@ -170,5 +176,9 @@ a.btn_cad{
     color: black;
     font-size: 20px;
     font-weight: bold;
+}
 
+.corpo .container .card button:hover{
+    background-color: #b57eba;
+    color: white;
 }
