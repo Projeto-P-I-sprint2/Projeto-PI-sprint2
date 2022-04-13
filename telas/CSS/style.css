@@ -190,11 +190,11 @@ a.btn_cad{
     color: white;
 }
 
-
-
-#span_button{
-    display: flex;
-    justify-content: flex-end;
+.button_f{
+    display: block;
+    top: 90%;
+    position: fixed;
+   margin-left: 95%;
 }
 
 #mybutton {
@@ -206,4 +206,5 @@ a.btn_cad{
     border: 1px solid white;
     color: white;
     cursor: pointer;
+    
 }
