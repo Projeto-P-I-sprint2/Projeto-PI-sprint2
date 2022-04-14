@@ -3,7 +3,7 @@
 body{
     margin: 0;
     font-family: "Poppins";
-    background-color: rgb(242, 242, 242);
+    background-color: #F2F2F2;
 }
 
 /*01-2=============================SCROLLBAR=======================================*/
@@ -13,7 +13,7 @@ body{
 }
 
 ::-webkit-scrollbar-track {
-    background-color: white;
+    background-color: #FFFFFF;
     border-radius: 10px;
 }
 
@@ -25,9 +25,9 @@ body{
 /*01-2=============================DIV NAV=========================================*/
 
 .header{
-    background-color: white;
+    background-color: #FFFFFF;
     color: #6B39C3;
-    box-shadow: 3px 4px 3px 3px rgb(141, 141, 141);
+    box-shadow: 3px 4px 3px 3px #8D8D8D;
 }
 
 .container{
@@ -59,7 +59,7 @@ body{
     text-decoration: none;
     margin-top: 2%;
     border: none;
-    color: black;
+    color: #000000;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -69,15 +69,15 @@ body{
 }
 
 .navbar a:hover{
-    background-color: #4c1aa1;
+    background-color: #4C1AA1;
     padding: 10px 20px;
-    color: white;
+    color: #FFFFFF;
 }
 
 .agora{
     
-    color: white !important;
-    background-color: #2d086e;
+    color: #FFFFFF !important;
+    background-color: #2D086E;
 }
 
 a.btn_cad{
@@ -85,7 +85,7 @@ a.btn_cad{
     margin-top: 2%;
     border: none;
     background-color: #6B39C3;
-    color: white;
+    color: #FFFFFF;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -101,7 +101,7 @@ a.btn_cad{
 
 .banner .container{
     height: 550px;
-    color: white;
+    color: #FFFFFF;
     display: flex;
     flex-direction: column;
 }
@@ -118,32 +118,32 @@ a.btn_cad{
 }
 
 .banner .container button{
-    background-color: white;
+    background-color: #FFFFFF;
     border-radius: 10px;
     width: 150px;
     height: 60px;
     margin: 30px;
-    border: 8px solid #b57eba;
+    border: 8px solid #B57EBA;
     align-self: center;
-    color: black;
+    color: #000000;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .banner .container button:hover{
-    background-color: #b57eba;
-    color: white;
+    background-color: #B57EBA;
+    color: #FFFFFF;
 }
 
 .corpo{
-    background-color: rgb(242, 242, 242);
+    background-color: #F2F2F2;
 }
 
 .corpo .container{
     height: 550px;
     width: 70%;
-    box-shadow: 1px 1px 10px gray;
+    box-shadow: 1px 1px 10px #808080;
     border-radius: 15px;
     display: flex;
     justify-content: space-around;
@@ -174,14 +174,14 @@ a.btn_cad{
 }
 
 .corpo .container .card button{
-    background-color: white;
+    background-color: #FFFFFF;
     border-radius: 10px;
     width: 150px;
     height: 60px;
     margin: 10px;
     border: 8px solid #b57eba;
     align-self: center;
-    color: black;
+    color: #000000;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -189,7 +189,7 @@ a.btn_cad{
 
 .corpo .container .card button:hover{
     background-color: #b57eba;
-    color: white;
+    color: #FFFFFF;
 }
 
 .button_f{
@@ -217,7 +217,7 @@ a.btn_cad{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 1px 1px 10px gray;
+    box-shadow: 1px 1px 10px #808080;
     border-radius: 10px;
     background-color: #FBFBFB;
 }
@@ -250,7 +250,7 @@ a.btn_cad{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 1px 1px 10px gray;
+    box-shadow: 1px 1px 10px #808080;
     border-radius: 10px;
     background-color: #FBFBFB;
 }
@@ -266,7 +266,7 @@ a.btn_cad{
     margin-right: 50px;
     border-radius: 10px;
     background-color: #6B39C3;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
     cursor: pointer;
 }
