@@ -11,9 +11,9 @@ body {
 /*01============================COMEÇO NAV========================================*/
 
 .header{
-    background-color: white;
+    background-color: #FFFFFF;
     color: #6B39C3;
-    box-shadow: 3px 4px 3px 3px rgb(141, 141, 141);
+    box-shadow: 3px 4px 3px 3px #8D8D8D;
 }
 
 .containerHeader{
@@ -43,7 +43,7 @@ body {
     text-decoration: none;
     margin-top: 2%;
     border: none;
-    color: black;
+    color: #000000;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -54,21 +54,21 @@ body {
 }
 
 .navbar a:hover{
-    background-color: #4c1aa1;
+    background-color: #4C1AA1;
     padding: 10px 20px;
-    color: white;
+    color: #FFFFFF;
 }
 .agora{
     
-    color: white !important;
-    background-color: #2d086e;
+    color: #FFFFFF !important;
+    background-color: #2D086E;
 }
 a.btn_cad{
     text-decoration: none;
     margin-top: 2%;
     border: none;
     background-color: #6B39C3;
-    color: white;
+    color: #FFFFFF;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -96,13 +96,13 @@ a.btn_cad{
     width: 500px;
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 1px 1px 10px gray;
-    background-color: white;
+    box-shadow: 1px 1px 10px #808080;
+    background-color: #FFFFFF;
 }
 
 .card h1 {
     font-family: Arial, Helvetica, sans-serif;
-    color: #b57eba;
+    color: #B57EBA;
 }
 
 .filha {
@@ -112,7 +112,7 @@ a.btn_cad{
 
 form input {
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #808080;
     background: transparent;
     font-size: 20px;
     width: 200px;
@@ -120,7 +120,7 @@ form input {
     margin: 8px;
     box-shadow: 0 0 0;
     outline: 0;
-    color: gray;
+    color: #808080;
 }
 
 form button {
@@ -132,17 +132,17 @@ form button {
     padding: 10px 0px;
     width: 120px;
     font-size: 18px;
-    border: 5px solid #b57eba;
-    background-color: white;
-    color: black;
+    border: 5px solid #B57EBA;
+    background-color: #FFFFFF;
+    color: #000000;
 }
 
 .filha button:hover{
-    background-color: #b57eba;
+    background-color: #B57EBA;
     padding: 10px 0px;
-    color: white;
+    color: #FFFFFF;
 }
 
 ::-webkit-input-placeholder {
-    color: gray;
+    color: #808080;
 }
