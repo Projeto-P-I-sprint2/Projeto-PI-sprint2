@@ -17,14 +17,16 @@ body {
 }
 
 .containerHeader{
-    width: 80%;
+    width: 90%;
     margin:0 auto ;
     
 }
+
 .header .containerHeader{
     display: flex;
     justify-content:space-between;
 }
+
 .banner .containerHeader.login ,.containerHeader.cadastro{
     justify-content: center;
 }
@@ -32,9 +34,10 @@ body {
 .navbar{
     display: flex;
     list-style: none;
-    width: 400px;
-    justify-content: space-evenly;
+    width: 300px;
+    justify-content: space-between;
     align-items: center;
+    margin-right: 100px;
 }
 
 /*01-2=============================BOTOES NAV=======================================*/
@@ -44,37 +47,37 @@ body {
     margin-top: 2%;
     border: none;
     color: #000000;
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     
-
 }
 
 .navbar a:hover{
     background-color: #4C1AA1;
-    padding: 10px 20px;
+    padding: 10px 10px;
     color: #FFFFFF;
 }
+
 .agora{
     
     color: #FFFFFF !important;
     background-color: #2D086E;
 }
+
 a.btn_cad{
     text-decoration: none;
     margin-top: 2%;
     border: none;
     background-color: #6B39C3;
     color: #FFFFFF;
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
 }
 
 /*01=============================TELA CADASTRO======================================*/
