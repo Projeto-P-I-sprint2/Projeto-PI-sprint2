@@ -9,7 +9,7 @@ body{
 /*01-2=============================SCROLLBAR=======================================*/
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -48,8 +48,8 @@ body{
 .navbar{
     display: flex;
     list-style: none;
-    width: 400px;
-    justify-content: space-evenly;
+    width: 50%;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -107,26 +107,28 @@ a.btn_cad{
 }
 
 .banner .container h1{
-    padding-top: 60px;
+    padding-top: 5%;
     font-size: 50px;
 }
 
 .banner .container p{
-    padding-top: 20px;
-    padding-left: 60px;
+    padding-top: 5%;
+    padding-left: 7%;
     font-size: 30px;
 }
 
 .banner .container button{
     background-color: #FFFFFF;
     border-radius: 10px;
-    width: 150px;
-    height: 60px;
+    width: 15%;
+    height: 10%;
+    max-width: 150px;
+    max-height: 60px;
     margin: 30px;
     border: 8px solid #B57EBA;
     align-self: center;
     color: #000000;
-    font-size: 20px;
+    font-size: 100%;
     font-weight: bold;
     cursor: pointer;
 }
@@ -153,9 +155,11 @@ a.btn_cad{
 
 .corpo .container .card{
     width: 33%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: #FBFBFB;
 }
 
@@ -163,26 +167,29 @@ a.btn_cad{
     width: 80%;
 }
 
-.corpo .container .card h2{
+.corpo .container .card h1{
     margin: 5px;
+    font-size: 100%;
 }
 
 .corpo .container .card p{
     margin: 5px;
     text-align: center;
-    font-size: 14px;
+    font-size: 80%;
 }
 
 .corpo .container .card button{
     background-color: #FFFFFF;
     border-radius: 10px;
-    width: 150px;
-    height: 60px;
+    width: 55%;
+    height: 12%;
+    max-width: 150px;
+    max-height: 60px;
     margin: 10px;
     border: 8px solid #b57eba;
     align-self: center;
     color: #000000;
-    font-size: 20px;
+    font-size: 100%;
     font-weight: bold;
     cursor: pointer;
 }
@@ -196,7 +203,7 @@ a.btn_cad{
     display: block;
     top: 90%;
     position: fixed;
-   margin-left: 95%;
+   margin-left: 90%;
 }
 
 .parcerias{
@@ -212,7 +219,6 @@ a.btn_cad{
 
 .parceiros{
     width: 30%;
-    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,8 +250,7 @@ a.btn_cad{
 }
 
 .valores{
-    width: 30%;
-    height: 200px;
+    width: 31%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,6 +258,11 @@ a.btn_cad{
     box-shadow: 1px 1px 10px #808080;
     border-radius: 10px;
     background-color: #FBFBFB;
+}
+
+.valores h3{
+    text-align: center;
+    font-size: 93%;
 }
 
 .valores p{
