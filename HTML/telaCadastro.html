@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPROD | Cadastro</title>
     <link rel="stylesheet" href="CSS/CadastroLogin.css">
-</head>
+    <script type="text/javascript" src="JS/script.js"></script>
 <body>
     <div class="corpo">
         <div class="header">
@@ -29,25 +29,50 @@
             <h1>Cadastro de usuário</h1>
             <form>
                 <div class="filha">
-                    <input id="empresa_input" placeholder="Empresa">
+                    <input id="empresa_input" placeholder="Empresa" required="">
                 </div>
                 <div class="filha">
-                    <input id="cnpj_input" placeholder="CNPJ">
+                    <input id="cnpj_input" placeholder="CNPJ" required="" maxlength="14">
                 </div>
                 <div class="filha">
-                    <input type="email" id="email_input" placeholder="E-mail">
+                    <input type="email" id="email_input" placeholder="E-mail" onkeyup="verificar_email()" required data-error="Por favor, informe um e-mail correto">
                 </div>
                 <div class="filha">
-                    <input type="password" id="senha_input" placeholder="Senha">
+                    <input type="password" id="senha_input" placeholder="Senha" required="">
                 </div>
                 <div class="filha">
-                    <input type="password" id="Csenha_input" placeholder="Confirmar senha">
+                    <input type="password" id="Csenha_input" placeholder="Confirmar senha" onkeyup="verificar_senha()" required="">
                 </div>
                 <div class="filha">
-                    <button type="button">Cadastrar</button>
-                </div>                 
+                    <button type="submit">Cadastrar</button>
+                </div>
+                <div id="resultado"> <span style="color: rgb(255, 24, 24);"></span></div>              
             </form>
         </div>
-    </div> 
+    </div>
+
+        <div class="footer container">
+
+            <div class="esquerdo">
+                <ul>
+                    <li><img src="IMG/map.png" style="width: 40px"><span class="p_footer">Praça da República, 178, República - SP</span></li>
+                    <li><img src="IMG/tel.png" style="width: 40px"><span class="p_footer">(11) 3789-9932</span></li>
+                    <li><img src="IMG/Email.png" style="width: 40px"><span class="p_footer">suporte@comprod.com </span></li>
+                </ul>
+                
+                
+                
+            </div>
+            <div class="direito">
+                
+                  <ul id="links_footer">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Contaos</a></li>
+                <li><a href="">Simulador</a></li>
+                <li><a href="">Sobre</a></li>
+            </ul>
+            </div>
+    </div>
+    <div class="direitos container"><p>COMPROD &copy;2022</p></div>
 </body>
 </html>
