@@ -8,6 +8,22 @@ body {
     font-family: "Poppins";
 }
 
+/*01-2=============================SCROLLBAR=======================================*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6B39C3;
+    border-radius: 10px;
+}
+
 /*01============================COMEÇO NAV========================================*/
 
 .header{
@@ -159,7 +175,7 @@ form button {
         height: 150px;
         display: flex;
         border-top: 5px solid #6B39C3;
-        margin-top: 10px;
+        margin-top: 70px;
 
 
         }
