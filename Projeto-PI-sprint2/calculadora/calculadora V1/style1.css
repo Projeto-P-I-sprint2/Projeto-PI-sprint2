@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    background-color: #bba3e4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.container1{
+    width: 25%;
+    height: 100%;
+
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-top-right-radius: 30px;
+    background-color: white;
+}
+p{
+    width: 90%;
+}
+input{
+    width: 80%;
+
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #6B39C3;
+
+    padding: 10px;
+    margin-bottom: 7px;
+}
+button{
+    margin: 10px 0 0 0;
+    padding: 10px 50px 10px 50px;
+
+    background-color: #6B39C3;
+    color: #FFF;
+
+    border-radius: 30px;
+    border-style: none;
+}
+button:hover{
+    background-color: #2d086e;
+}
+button:active{
+    background-color: #4c1aa1;
+}
+p{
+    font-size: 12px;
+    text-align: center;
+}
+.tituloInput{
+    font-size: 15px;
+    margin: 5px 0 5px 0;
+}
+.icon{
+    width: 12px;
+    border-radius: 50px;
+}
+.icon:hover{
+    background-color: #6B39C3;
+    box-shadow: 0 0 10px rgb(98, 17, 192)
+}
+.icon:active{
+    background-color: #2d086e;
+}

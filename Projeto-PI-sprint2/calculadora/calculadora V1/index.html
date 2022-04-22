@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+            <img style="width: 150px; margin-bottom: 10px;" src="https://logosmarcas.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png">
+            <p>
+                Insira algumas informações para calcularmos a taxa de absenteísmo para você!
+            </p>
+            <br>
+            <p class="tituloInput">Quantidade de Funcionários 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="funcionario()">
+            </p><input id="quantidadeFuncionarios">
+            <p class="tituloInput">Jornada 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="jornada()">
+            </p><input id="horasTrabalhados">
+            <p class="tituloInput">Dias Trabalhados 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="dTrabalho()">
+            </p><input id="diasTrabalhados">
+            <p class="tituloInput">Quantidade de Faltas 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="qntdFalta()">
+            </p><input id="qntdFaltasFunc">
+            <p class="tituloInput">Minutos Perdidos 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="mPerdido()">
+            </p><input id="atrasoFuncionario">
+            <p class="tituloInput">Salário Líquido 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/41/41943.png" onclick="sLiquido()">
+            </p><input id="mSalario">
+            <button onclick="calcular()">
+                Calcular
+            </button>
+        </div>
+        <div class="container2">
+            <div class="caixa">
+                <div class="caixa1">
+                    <div class="titulo">
+                        Quantidade de Funcionários
+                    </div>
+                    <div class="content">
+                        <div class="dados" id="dadosQntdF"></div>
+                        <div class="indice" id="altoBaixo1"></div>
+                    </div>
+                </div>
+                <div class="caixa1">
+                    <div class="titulo">
+                        Salário do funcionário por hora
+                    </div>
+                    <div class="content">
+                        <div class="dados" id="rSalario"></div>
+                        <div class="indice" id="altoBaixo2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="caixa">
+                <div class="caixa2">
+                    <div class="Container1">
+                        <div class="titulo">
+                            Horas de Abstenção no mês
+                        </div>
+                        <div class="content">
+                            <div class="dados" id="HorasA"></div>
+                        </div>
+                    </div>
+                    <div class="Container2">
+                        <div class="titulo">
+                            Horas de Abstenção no Ano
+                        </div>
+                        <div class="content">
+                            <div class="dados" id="HorasAM"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="caixa" id="caixaDiferente">
+                <div class="separa">
+                    <div class="caixa1" id="caixa1D">
+                        <div class="titulo">
+                            Perca de dinheiro da empresa por mês
+                        </div>
+                        <div class="content">
+                            <div class="dados" id="percaSalarioM"></div>
+                            <div class="indice" id="altoBaixo3"></div>
+                        </div>
+                    </div>
+                    <div class="caixa1" id="caixa2D">
+                        <div class="titulo">
+                            Perca de dinheiro da empresa por ano
+                        </div>
+                        <div class="content">
+                            <div class="dados" id="percaSalarioA"></div>
+                            <div class="indice" id="altoBaixo4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="separa">
+                    <div class="caixa3">
+                        <div class="titulo">
+                            Porcentagem de Absenteísmo
+                        </div>
+                        <div class="content">
+                            <div class="dados" id="Absenteismo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
