@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #F2F2F2;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+/*01-2=============================SCROLLBAR=======================================*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6B39C3;
+    border-radius: 10px;
+}
+
+
+
+/*01-2=============================BOTOES NAV=======================================*/
+.navbar{
+    display: flex;
+    list-style: none;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.navbar a{
+    text-decoration: none;
+    margin-top: 2%;
+    border: none;
+    color: #000000;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+}
+
+.navbar a:hover{
+    background-color: #4C1AA1;
+    padding: 10px 10px;
+    color: #FFFFFF;
+}
+
+.agora{
+    color: #FFFFFF !important;
+    background-color: #2D086E;
+}
+
+a.btn_cad{
+    text-decoration: none;
+    margin-top: 2%;
+    border: none;
+    background-color: #6B39C3;
+    color: #FFFFFF;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+/* dashboard */
+.corpo {
+    display: flex;
+    justify-content: center;
+}
+.dashboard{
+    background-color: #c5c5c5;
+    width: 90%;
+    height: 70%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: #000000 solid 2px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.box1,.box2,.box3,.box4,.box5{
+    padding: 1%;
+    text-shadow: 0px 2px 10px white;
+}
+
+.box1{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(23, 0, 151);
+    border: 1px solid black;
+    border-radius: 14px;
+}
+
+.box2{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(24, 152, 226);
+    border: 1px solid black;
+    border-radius: 14px;
+}
+
+.box3{
+    width: 190px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(227, 241, 23);
+    border: 1px solid black;
+    border-radius: 14px;
+}
+
+.box4{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(253, 122, 0);
+    border: 1px solid black;
+    border-radius: 14px;
+}
+
+.box5{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 105px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(248, 0, 0);
+    border: 1px solid black;
+    border-radius: 14px;
+}
+
+.boxes{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+}
+
+.welcome{
+    float: left;
+    width: 23%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #7327f664;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome .navbar{
+flex-direction: column;
+display: inline-block;
+}

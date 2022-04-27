@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPROD | Cadastro</title>
+    <link rel="stylesheet" href="CSS/CadastroLogin.css">
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/script.js"></script>
+
+<body>
+    <div class="corpo">
+        <div class="header">
+            <div class="containerHeader">
+                <h1>
+                    COMPROD
+                </h1>
+     
+                <ul class="navbar">
+                    <li ><a href="index.html">Inicio</a></li>
+                    <li><a href="simulador.html">Simulador</a></li>
+                    <li class=""><a href="telaLogin.html">Login</a></li>
+                    <li class="btn_"><a href="telaCadastro.html" class="agora">Cadastro</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h1>Cadastro de usuário</h1>
+            <div class="form">
+                <div class="filha">
+                    <input id="empresa_input" placeholder="Empresa" required="">
+                      
+                </div>
+                <div class="filha">
+                    <input id="cnpj_input" placeholder="CNPJ " required="" maxlength="14" type="number"
+                    data-error="Por favor, somente números" >
+                </div>
+                <div class="filha">
+                    <input type="email" id="email_input" placeholder="E-mail" 
+                    required data-error="Por favor, informe um e-mail correto">
+                </div>
+                <div class="filha">
+                    <input type="password" id="senha_input" placeholder="Senha" required=""
+                    maxlength="16" minlength="8">
+                </div>
+                <div class="filha">
+                    <input type="password" id="confirmacao_senha_input" placeholder="Confirmar senha" 
+                    required="" maxlength="16" minlength="8">
+                </div>
+                <div class="filha">
+                    <button type="submit" onclick="cadastrar()">Cadastrar</button>
+                </div>
+
+                <div>
+                    <span id="msg_erro"></span>
+                </div>  
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>            
+            </div>
+        </div>
+    </div>
+
+        <div class="footer container">
+
+            <div class="esquerdo">
+                <ul>
+                    <li><img src="IMG/map.png" style="width: 40px"><span class="p_footer">
+                        Praça da República, 178, República - SP</span></li>
+                    <li><img src="IMG/tel.png" style="width: 40px"><span class="p_footer">
+                        (11) 3789-9932</span></li>
+                    <li><img src="IMG/Email.png" style="width: 40px"><span class="p_footer">
+                        suporte@comprod.com </span></li>
+                </ul>
+                
+                
+                
+            </div>
+            <div class="direito">
+                
+            <ul id="links_footer">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+            </ul>
+            </div>
+    </div>
+    <div class="direitos container"><p>COMPROD &copy;2022</p></div>
+</body>
+</html>
+<script>
+    function cadastrar() {
+        
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var empresaVar = empresa_input.value;
+        var cnpjVar = cnpj_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (empresaVar == "" || cnpjVar == "" || emailVar == "" || 
+            senhaVar == "" || confirmacaoSenhaVar == "") {
+            setTimeout(function () {
+                msg_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+                }, 1000);
+
+            
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+        if(cnpjVar.length>14){
+            msg_erro.innerHTML = "Ops, CNPJ inválido! <br>Digite um CNPJ somente com números e até 14 digitos";
+            finalizarAguardar();
+            return false;
+
+        }else{
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+          
+            msg_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+        if(senhaVar.length<8){
+            msg_erro.innerHTML = "Senha muito curta, digite uma senha com 8 dígitos ou mais.";
+            return false;
+        }else{
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            
+            msg_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                empresaServer: empresaVar,
+                cnpjServer: cnpjVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                msg_erro.innerHTML="Cadastro realizado com sucesso! Aguarde...";
+                aguardar();
+                setTimeout(function () {
+                
+
+                window.location.href = "./telaLogin.html";
+                limparFormulario();
+                finalizarAguardar();
+            }, 5000);
+            } else {
+                throw (msg_erro.innerHTML="Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
