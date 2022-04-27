@@ -8,22 +8,6 @@ body {
     font-family: "Poppins";
 }
 
-/*01-2=============================SCROLLBAR=======================================*/
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #FFFFFF;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #6B39C3;
-    border-radius: 10px;
-}
-
 /*01============================COMEÇO NAV========================================*/
 
 .header{
@@ -128,8 +112,17 @@ a.btn_cad{
     display: flex;
     justify-content: center;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
-form input {
+.form input {
     border: none;
     border-bottom: 1px solid #808080;
     background: transparent;
@@ -142,7 +135,7 @@ form input {
     color: #808080;
 }
 
-form button {
+.form button {
     cursor: pointer;
     font-weight: bold;
     align-self: center;
@@ -165,6 +158,17 @@ form button {
 ::-webkit-input-placeholder {
     color: #808080;
 }
+
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
 /*============================================FOOTER==================================================*/
         .footer{
 
@@ -175,7 +179,7 @@ form button {
         height: 150px;
         display: flex;
         border-top: 5px solid #6B39C3;
-        margin-top: 70px;
+        margin-top: 10px;
 
 
         }
@@ -237,3 +241,18 @@ form button {
             color:white;
         }
 /*=======================================FIM FOOTER====================================================================*/
+/*01-2=============================SCROLLBAR=======================================*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6B39C3;
+    border-radius: 10px;
+}

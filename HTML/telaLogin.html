@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPROD | Login</title>
     <link rel="stylesheet" href="CSS/CadastroLogin.css">
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -29,7 +32,7 @@
     <div class="container">
         <div class="card">
             <h1>Login</h1>
-            <form>
+            <div class="form">
                 <div class="filha">
                     <input type="email" id="email_input" placeholder="E-mail">
                 </div>
@@ -40,9 +43,16 @@
                     <a href="#">Esqueci minha senha</a>
                 </div>
                 <div class="filha">
-                    <button type="button">Login</button>
+                    <button type="submit" onclick="entrar()">Login</button>
                 </div>
-            </form>
+                <div>
+                    <span id="msg_erro"></span>
+                </div>  
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+            </div>
         </div>
     </div>
     <div class="footer container">
@@ -59,11 +69,9 @@
             </div>
             <div class="direito">
                 
-                  <ul id="links_footer">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Contaos</a></li>
-                <li><a href="">Simulador</a></li>
-                <li><a href="">Sobre</a></li>
+            <ul id="links_footer">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
             </ul>
             </div>
     </div>
@@ -71,3 +79,89 @@
 </body>
 
 </html>
+<script>
+
+function buscar(){
+
+}
+
+function entrar() {
+
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+
+            msg_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            //setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+
+            msg_erro.innerHTMLL = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            //setInterval(sumirMensagem, 5000)
+        }
+
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nomeEmpresa;
+                    sessionStorage.ID_USUARIO = json.idempresa;
+                    msg_erro.innerHTML="Login realizado com sucesso! Aguarde...";
+                    setTimeout(function () {
+                        window.location = "./dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+        teste();
+    }
+
+
+
+</script>
