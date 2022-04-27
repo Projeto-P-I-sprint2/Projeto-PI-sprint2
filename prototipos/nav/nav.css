@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+/*01=================================COMEÇO NAV=============================================================*/
+
+.header{
+    background-color: white;
+    color: #6B39C3;
+    box-shadow: 5px 4px 5px 5px gray;
+}
+
+.container{
+    width: 80%;
+    margin:0 auto ;
+    
+}
+.header .container{
+    display: flex;
+    justify-content:space-between;
+}
+.banner .container.login ,.container.cadastro{
+    justify-content: center;
+}
+
+.navbar{
+    display: flex;
+    list-style: none;
+    width: 400px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*01-2=================================BOTOES NAV=============================================================*/
+.navbar a{
+    text-decoration: none;
+    margin-top: 2%;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+
+}
+
+.navbar a:hover{
+    background-color: #4c1aa1;
+    padding: 10px 20px;
+    color: white;
+}
+.agora{
+    
+    color: white !important;
+    background-color: #2d086e;
+}
+a.btn_cad{
+    text-decoration: none;
+    margin-top: 2%;
+    border: none;
+    background-color: #6B39C3;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+/*01-2===============================FIM BOTOES NAV====================================================*/
+
+/*01=================================FIM NAV=============================================================*/
