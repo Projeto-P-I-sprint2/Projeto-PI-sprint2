@@ -26,7 +26,7 @@ function calcular() {
         var produI = (qht / pF) * qdt // Calculo da quantidade de produtos feitos ideal no mês
         produFP = produF * pP // Calculo do lucro no mês real
         produFI = produI * pP // Calculo do lucro no mês ideal
-        qP = produFI - produFP // Calculo da Perca de dinheiro
+        qP = produFI - produFP // Calculo da Perda de dinheiro
         qPA = qP * 12
 
         c1 = ((produFP * 100) / produFI)
@@ -34,7 +34,7 @@ function calcular() {
 
         dadosLucro.innerHTML = `${produFP.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
         dadosLucroF.innerHTML = `${produFI.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
-        perca.innerHTML = `${c2.toFixed(1)}% de perca para sua empresa comparado aos horarios se fossem cumpridos.`
+        perca.innerHTML = `${c2.toFixed(1)}% de perda para sua empresa comparado aos horarios se fossem cumpridos.`
 
         //ChartJS
         const ctx = document.getElementById('myChart').getContext('2d');
@@ -43,7 +43,7 @@ function calcular() {
             data: {
                 labels: ['Perca'],
                 datasets: [{
-                    label: 'Perca Anual',
+                    label: 'Perda Anual',
                     data: [qPA],
                     fill: false,
                     backgroundColor: 'rgb(0, 255, 0, 0.2)',
@@ -51,7 +51,7 @@ function calcular() {
                     tension: 0.1
                 },
                 {
-                    label: 'Perca Mensal',
+                    label: 'Perda Mensal',
                     data: [qP],
                     fill: false,
                     backgroundColor: 'rgb(255, 0, 0, 0.2)',

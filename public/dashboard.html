@@ -1,82 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPROD | Dashboard</title> 
-    <link rel="stylesheet" href="CSS/dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/funcoes.js"></script>
-    <script src="js/login.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMPROD | Dashboard</title>
+  <link rel="stylesheet" href="CSS/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/funcoes.js"></script>
+  <script src="js/login.js"></script>
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">        
+<body onload="validarSessao(), atualizarFeed()">
 
-        <div class="welcome">
-          <h2>Bem vinda <span id="nome_empresa"></span></h2><br>
-          <h2>Suas dashboards referentes a suas salas</h2>
-          
-         <ul class="navbar">
-           <li><a href="dashboard.html" class="agora">Sala A-1</a></li>
-           <li><a href="dashboardA2.html">Sala A-2</a></li>
-           <li><a href="dashboardA3.html">Sala A-3</a></li>
-           <li><a onclick="limparSessao()">Sair</a></li>
-           
-         </ul>
-        </div>
+  <div class="welcome">
+    <h2>Bem vinda <span id="nome_empresa"></span></h2><br>
+    <h2>Suas dashboards referentes a suas salas</h2>
 
-        <div class="boxes">
-          <div class="box1"><span>Critico(17°C/18°C)</span></div>
-            <div class="box2"><span>Alerta(18°C/19°C)</span></div>
-            <div class="box3"><span>Agradavel(20°C/23°C)</span></div>
-            <div class="box4"><span>Alerta(24°C/26°C)</span></div>
-            <div class="box5"><span>Critico(26°C/28°C)</span></div>
-        </div>
+    <ul class="navbar">
+      <li><a href="dashboard.html" class="agora">Sala A-1</a></li>
+      <li><a href="dashboardA2.html" class="alertaLa">Sala A-2</a></li>
+      <li><a href="dashboardA3.html" class="alertaAzulEsc">Sala A-3</a></li>
+      <li><a href="DB-arduino.html">Sprint-2</a></li>
+      <li><a onclick="limparSessao()">Sair</a></li>
+    </ul>
+  </div>
 
-        <div class="corpo">
-            <div class="dashboard">
-                    <canvas id="myChart"></canvas>
-        </div>
+  <div class="boxes">
+    <div class="box1"><span>Critico<br>(16°C)(300Lux)</span></div>
+    <div class="box2"><span>Alerta<br>(18°C)(430Lux)</span></div>
+    <div class="box3"><span>Agradavel<br>(20°C/23°C)(550/700Lux)</span></div>
+    <div class="box4"><span>Alerta<br>(25°C)(750Lux)</span></div>
+    <div class="box5"><span>Critico<br>(28°C)(900Lux)</span></div>
+  </div>
 
-      
+  <div class="corpo" id="id_temp">
+    <div class="dashboard">
+      <canvas id="temperatura_chart"></canvas>
+    </div>
+    <div class="card alertaVer">
+      <p>Temperatura atual</p><br>
+      <h1>22°C</h1>
+    </div>
+  </div>
+
+  <div class="corpo" id="id_lum">
+    <div class="card alertaVer">
+      <p>Luminosidade atual</p><br>
+      <h1>638 Lux</h1>
+    </div>
+    <div class="dashboard">
+      <canvas id="luminosidade_chart"></canvas>
+    </div>
+  </div>
 </body>
+
 </html>
 <script>
-  
+
 
   //verificar_autenticacao();
-    const labels = [
-      '12:00',
-      '13:00',
-      '14:00',
-      '15:00',
-      '16:00',
-      '17:00',
-    ];
+  const labels_temp = [
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+  ];
 
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'temperatura',
-        backgroundColor: 'rgb(4, 0, 248)',
-        borderColor: 'rgb(4, 0, 248)',
-        data: [30, 29, 28, 25, 22, 23],
-      },]
-    };
+  const labels_lum = [
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+  ];
 
-    const config = {
-      type: 'line',
-      data: data,
-      options: {}
-    };
-    nome_empresa.innerHTML = sessionStorage.NOME_USUARIO;
-  </script>
+  const data_temp = {
+    labels: labels_temp,
+    datasets: [{
+      label: 'temperatura',
+      backgroundColor: '#0400f8',
+      borderColor: '#0400f8',
+      data: [23, 25, 22, 24, 24, 22],
+    },]
+  };
+
+  const data_lum = {
+    labels: labels_lum,
+    datasets: [{
+      label: 'luminosidade',
+      backgroundColor: '#0400f8',
+      borderColor: '#0400f8',
+      data: [650, 630, 680, 700, 640, 638],
+    },]
+  };
+
+  const config_temp = {
+    type: 'line',
+    data: data_temp,
+    options: {}
+  };
+
+  const config_lum = {
+    type: 'line',
+    data: data_lum,
+    options: {}
+  };
+
+  nome_empresa.innerHTML = sessionStorage.NOME_USUARIO;
+</script>
 
 <script>
 
-    const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-  </script>
+  const myChart_temp = new Chart(
+    document.getElementById('temperatura_chart'),
+    config_temp
+  );
+
+  const myChart_lum = new Chart(
+    document.getElementById('luminosidade_chart'),
+    config_lum
+  );
+</script>

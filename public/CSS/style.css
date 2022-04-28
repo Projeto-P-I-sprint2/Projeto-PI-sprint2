@@ -156,7 +156,7 @@ a.btn_cad{
 }
 
 .corpo .container .card{
-    width: 33%;
+    width: 45%;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -294,7 +294,7 @@ a.btn_cad{
         height: 150px;
         display: flex;
         border-top: 5px solid #6B39C3;
-        margin-top: 10px;
+        margin-top: 80px;
 
 
         }

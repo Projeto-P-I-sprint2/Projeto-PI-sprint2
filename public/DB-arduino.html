@@ -24,32 +24,16 @@
 </head>
 
 <body>
-    <div>
-        <div class="header">
-            <div class="container">
-                <h1>
-                    COMPROD
-                </h1>
-
-                <ul class="navbar">
-                    <li><a href="index.html" class="agora">Inicio</a></li>
-                    <li><a href="simulador.html">Simulador</a></li>
-                    <li class=""><a href="telaLogin.html">Login</a></li>
-                    <li class="btn_"><a href="telaCadastro.html" class="btn_cad">Cadastro</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <div class="welcome">
         <h2>Bem vinda ${nome_empresa}</h2><br>
         <h2>Suas dashboards referentes a suas salas</h2>
 
         <ul class="navbar">
             <li><a href="dashboard.html">Sala A-1</a></li>
-            <li><a href="dashboardA2.html">Sala A-2</a></li>
-            <li><a href="dashboardA3.html">Sala A-3</a></li>
-            <li><a href="DB-arduino.html">Sprint-2</a></li>
+            <li><a href="dashboardA2.html" class="alertaLa">Sala A-2</a></li>
+            <li><a class="alertaAzulEsc" href="dashboardA3.html">Sala A-3</a></li>
+            <li><a href="DB-arduino.html" class="agora">Sprint-2</a></li>
+            <li><a onclick="limparSessao()">Sair</a></li>
 
         </ul>
     </div>
@@ -64,13 +48,14 @@
 
     <div class="corpo">
         <div class="dashboard">
-            <h1>Sensor LM 35 - Temperatura</h1>
-            <section style="width: 100%;">
+            <h1>Sensor Temperatura</h1>
+            <section style="width: 100%">
                 <canvas id="lm35Temperatura"></canvas>
 
                 <h1>Sensor Luminosidade</h1>
-                <section style="width: 100%;">
+                <section style="width: 100%">
                     <canvas id="luminosidade"></canvas>
+                </section>>
         </div>
 
         <script>
@@ -196,11 +181,6 @@
             }, 1000);
 
         </Script>
-
-
-        <div class="direitos container">
-            <p>COMPROD &copy;2022</p>
-        </div>
 </body>
 
 </html>
