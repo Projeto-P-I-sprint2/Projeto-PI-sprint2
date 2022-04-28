@@ -28,6 +28,8 @@ body{
     background-color: #FFFFFF;
     color: #6B39C3;
     box-shadow: 3px 4px 3px 3px #8D8D8D;
+    position: fixed;
+    width: 100%;
 }
 
 .container{
@@ -97,7 +99,7 @@ a.btn_cad{
 .banner{
     background-image: url(IMGS/fundo\ 2.jpg);
     background-size: cover;
-    margin: 0%;
+    margin: 0;
 }
 
 .banner .container{

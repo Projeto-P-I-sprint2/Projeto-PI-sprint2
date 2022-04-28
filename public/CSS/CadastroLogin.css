@@ -14,6 +14,8 @@ body {
     background-color: #FFFFFF;
     color: #6B39C3;
     box-shadow: 3px 4px 3px 3px #8D8D8D;
+    position: fixed;
+    width: 100%;
 }
 
 .containerHeader{
@@ -95,7 +97,8 @@ a.btn_cad{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 150px;
+    margin-bottom: 40px;
     width: 500px;
     border-radius: 20px;
     padding: 20px;
