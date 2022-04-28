@@ -80,17 +80,26 @@ a.btn_cad {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 12px;
 }
 
 #id_lum{
     justify-content: space-around;
 }
 
+.corpo.funcional{
+    margin-top: 40px;
+}
+
+.corpo .dashboard.funcional{
+    width: 60%;
+    height: 200px; 
+}
+
 .dashboard {
     background-color: #C5C5C5;
     width: 90%;
     height: 70%;
-    margin-top: 15px;
     border: #000000 solid 2px;
     border-radius: 10px;
     display: flex;
@@ -103,7 +112,7 @@ a.btn_cad {
     height: 200px;
     border: #000000 solid 2px;
     border-radius: 10px;
-    background-color: #C5C5C5;
+    background-color: #9982C2;
     text-align: center;
     justify-content: start;
 }
@@ -212,9 +221,14 @@ a.btn_cad {
     height: 94vh;
     padding: 20px;
     background-color: #9982C2;
+    text-align: center;
     align-items: center;
     justify-content: center;
     border-right: 2px solid #000000;
+}
+
+.welcome ul li{
+    margin-right: 70px;
 }
 
 .welcome .navbar {

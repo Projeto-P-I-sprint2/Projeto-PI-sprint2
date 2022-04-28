@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPROD | Dashboard</title>
+    <link rel="shortcut icon" href="CSS/IMGS/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -25,7 +26,7 @@
 
 <body>
     <div class="welcome">
-        <h2>Bem vinda ${nome_empresa}</h2><br>
+        <h2>Bem vinda <span id="nome_empresa"></span></h2><br>
         <h2>Suas dashboards referentes a suas salas</h2>
 
         <ul class="navbar">
@@ -39,24 +40,32 @@
     </div>
 
     <div class="boxes">
-        <div class="box1"><span>Critico(17°C/18°C)</span></div>
-        <div class="box2"><span>Alerta(18°C/19°C)</span></div>
-        <div class="box3"><span>Agradavel(20°C/23°C)</span></div>
-        <div class="box4"><span>Alerta(24°C/26°C)</span></div>
-        <div class="box5"><span>Critico(26°C/28°C)</span></div>
+        <div class="box1"><span>Critico<br>(16°C)(300Lux)</span></div>
+        <div class="box2"><span>Alerta<br>(18°C)(430Lux)</span></div>
+        <div class="box3"><span>Agradavel<br>(20°C/23°C)(550/700Lux)</span></div>
+        <div class="box4"><span>Alerta<br>(25°C)(750Lux)</span></div>
+        <div class="box5"><span>Critico<br>(28°C)(900Lux)</span></div>
     </div>
 
-    <div class="corpo">
-        <div class="dashboard">
-            <h1>Sensor Temperatura</h1>
-            <section style="width: 100%">
-                <canvas id="lm35Temperatura"></canvas>
-
-                <h1>Sensor Luminosidade</h1>
-                <section style="width: 100%">
-                    <canvas id="luminosidade"></canvas>
-                </section>>
-        </div>
+        <div class="corpo funcional" id="id_temp">
+            <div class="dashboard funcional">
+              <canvas id="lm35Temperatura"></canvas>
+            </div>
+            <div class="card">
+              <p>Temperatura atual</p><br>
+              <h1>-°C</h1>
+            </div>
+          </div>
+        
+          <div class="corpo funcional" id="id_lum">
+            <div class="card">
+              <p>Luminosidade atual</p><br>
+              <h1>- Lux</h1>
+            </div>
+            <div class="dashboard funcional">
+              <canvas id="luminosidade"></canvas>
+            </div>
+          </div>
 
         <script>
             /* -- luminosidade -- */
@@ -180,7 +189,13 @@
                 obterDados(chave, 'chave');
             }, 1000);
 
+
+            nome_empresa.innerHTML = sessionStorage.NOME_USUARIO;
         </Script>
 </body>
 
 </html>
+
+<script>
+
+</script>
