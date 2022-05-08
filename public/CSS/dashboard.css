@@ -130,13 +130,8 @@ a.btn_cad {
     font-weight: 200;
 }
 
-.box1,
-.box2,
-.box3,
-.box4,
-.box5 {
-    padding: 1%;
-    text-shadow: 0px 2px 10px #FFFFFF;
+.box1, .box2, .box3, .box4, .box5{
+    color: #FFFFFF;
 }
 
 .box1 {
