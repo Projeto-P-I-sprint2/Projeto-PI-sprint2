@@ -150,6 +150,7 @@ function entrar() {
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
+                msg_erro.innerHTMLL = "Email ou senha inválidos";
 
                 resposta.text().then(texto => {
                     console.error(texto);

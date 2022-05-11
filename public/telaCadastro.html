@@ -120,7 +120,7 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
-        if(cnpjVar.length>14){
+        if(cnpjVar.length != 14){
             msg_erro.innerHTML = "Ops, CNPJ inválido! <br>Digite um CNPJ somente com números e até 14 digitos";
             finalizarAguardar();
             return false;
