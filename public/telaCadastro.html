@@ -39,7 +39,7 @@
                       
                 </div>
                 <div class="filha">
-                    <input id="cnpj_input" placeholder="CNPJ " required="" maxlength="14" type="number"
+                    <input id="cpf_input" placeholder="CPF " required="" maxlength="11" type="number"
                     data-error="Por favor, somente números" >
                 </div>
                 <div class="filha">
@@ -101,12 +101,12 @@
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var empresaVar = empresa_input.value;
-        var cnpjVar = cnpj_input.value;
+        var cpfVar = cpf_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (empresaVar == "" || cnpjVar == "" || emailVar == "" || 
+        if (empresaVar == "" || cpfVar == "" || emailVar == "" || 
             senhaVar == "" || confirmacaoSenhaVar == "") {
             setTimeout(function () {
                 msg_erro.innerHTML = "Preencha todos os campos para prosseguir!";
@@ -120,8 +120,8 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
-        if(cnpjVar.length != 14){
-            msg_erro.innerHTML = "Ops, CNPJ inválido! <br>Digite um CNPJ somente com números e até 14 digitos";
+        if(cpfVar.length != 11){
+            msg_erro.innerHTML = "Ops, CPF inválido! <br>Digite um CPF somente com números e até 14 digitos";
             finalizarAguardar();
             return false;
 
@@ -166,7 +166,7 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 empresaServer: empresaVar,
-                cnpjServer: cnpjVar,
+                cpfServer: cpfVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
