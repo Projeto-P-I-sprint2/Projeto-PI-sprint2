@@ -34,26 +34,53 @@
         <div class="card">
             <h1>Cadastro de usuário</h1>
             <div class="form">
+
                 <div class="filha">
-                    <input id="nome_input" placeholder="Nome" required="">
-                      
+                    <label for="nome_input">Nome</label>
+                    <input id="nome_input" placeholder="Seu nome" required="">       
                 </div>
+
                 <div class="filha">
-                    <input id="cpf_input" placeholder="CPF " required="" maxlength="11" type="number"
+                    <label for="cpf_input">CPF</label>
+                    <input id="cpf_input" placeholder="CPF" required="" maxlength="11" type="number"
                     data-error="Por favor, somente números" >
                 </div>
+
                 <div class="filha">
-                    <input type="email" id="email_input" placeholder="E-mail" 
+                    <label for="email_input">Email</label>
+                    <label for="email_input"></label>
+                    <input type="email" id="email_input" placeholder="Seu email" 
                     required data-error="Por favor, informe um e-mail correto">
                 </div>
+
                 <div class="filha">
-                    <input type="password" id="senha_input" placeholder="Senha" required=""
+                    <label for="data_input">Data de nascimento</label>
+                    <input type="date" id="data_input" placeholder="Data de nascimento" 
+                    required data-error="Por favor, informe uma data correta">
+                </div>
+
+                <div class="filha">
+                    <label for="cargo_select">Cargo</label>
+                    <select id="cargo_select" required data-error="Por favor, informe um cargo válido">
+                        <option value="">Nivel</option>
+                        <option value="1">S (Presidente, vice, CEO, etc)</option>
+                        <option value="2">A (Gestor, lideres, etc)</option>
+                        <option value="3">B (funcionarios em geral)</option>
+                    </select>
+                </div>
+
+                <div class="filha">
+                    <label for="senha_input">Senha</label>
+                    <input type="password" id="senha_input" placeholder="****" required=""
                     maxlength="16" minlength="8">
                 </div>
+
                 <div class="filha">
-                    <input type="password" id="confirmacao_senha_input" placeholder="Confirmar senha" 
+                    <label for="confirmacao_senha_input">Confirmar senha</label>
+                    <input type="password" id="confirmacao_senha_input" placeholder="****" 
                     required="" maxlength="16" minlength="8">
                 </div>
+
                 <div class="filha">
                     <button type="submit" onclick="cadastrar()">Cadastrar</button>
                 </div>
@@ -61,9 +88,11 @@
                 <div>
                     <span id="msg_erro"></span>
                 </div>  
+
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>            
+                </div>  
+                          
             </div>
         </div>
     </div>
