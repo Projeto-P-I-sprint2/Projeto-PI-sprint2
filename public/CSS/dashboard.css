@@ -26,6 +26,10 @@ body {
 
 /*01-2=============================BOTOES NAV=======================================*/
 
+.colocar-lado {
+    display: flex;
+}
+
 .navbar {
     display: flex;
     list-style: none;
@@ -213,7 +217,6 @@ a.btn_cad {
 .welcome {
     float: left;
     width: 23%;
-    height: 94vh;
     padding: 20px;
     background-color: #9982C2;
     text-align: center;

@@ -93,7 +93,7 @@ a.btn_cad {
     justify-content: center;
 }
 
-.card {
+.card, .card-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,7 +107,7 @@ a.btn_cad {
     background-color: #FFFFFF;
 }
 
-.card h1 {
+.card h1, .card-cadastro h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: #B57EBA;
 }

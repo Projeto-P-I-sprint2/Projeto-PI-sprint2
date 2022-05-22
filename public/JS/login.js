@@ -20,8 +20,10 @@ function entrar() {
                 console.log(JSON.stringify(json));
 
                 sessionStorage.LOGIN_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nomeEmpresa;
-                sessionStorage.ID_USUARIO = json.idempresa;
+                sessionStorage.NOME_USUARIO = json.nomeFuncionario;
+                sessionStorage.ID_USUARIO = json.IDfuncionario;
+                sessionStorage.NOME_EMPRESA = json.nomeEmpresa;
+                sessionStorage.ID_EMPRESA = json.IDempresa;
 
                 setTimeout(function () {
                     window.location = "/index.html";
