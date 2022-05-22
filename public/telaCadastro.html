@@ -56,7 +56,7 @@
                 <div class="filha">
                     <label for="data_input">Data de nascimento</label>
                     <input type="date" id="data_input" placeholder="Data de nascimento" 
-                    required data-error="Por favor, informe uma data correta">
+                    required data-error="Por favor, informe uma data válida">
                 </div>
 
                 <div class="filha">
@@ -92,7 +92,7 @@
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>  
-                          
+
             </div>
         </div>
     </div>
@@ -132,11 +132,13 @@
         var nomeVar = nome_input.value;
         var cpfVar = cpf_input.value;
         var emailVar = email_input.value;
+        var dataVar = data_input.value;
+        var cargoVar = cargo_select.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || cpfVar == "" || emailVar == "" || 
-            senhaVar == "" || confirmacaoSenhaVar == "") {
+            senhaVar == "" || confirmacaoSenhaVar == "" || cargoVar == "" || dataVar == "") {
             setTimeout(function () {
                 msg_erro.innerHTML = "Preencha todos os campos para prosseguir!";
                 }, 1000);
@@ -197,7 +199,9 @@
                 nomeServer: nomeVar,
                 cpfServer: cpfVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                cargoServer: cargoVar,
+                dataServer: dataVar
             })
         }).then(function (resposta) {
 
