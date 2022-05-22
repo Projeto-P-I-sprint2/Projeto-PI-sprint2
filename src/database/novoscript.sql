@@ -32,7 +32,7 @@ FK_cargo INT,
 FOREIGN KEY (FK_cargo)REFERENCES cargos (IDcargo),
 PRIMARY KEY (IDfuncionario, FK_empresa, FK_cargo)
 );
-
+a
 CREATE TABLE arduino (
 IDarduino INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 modelo VARCHAR (30),
