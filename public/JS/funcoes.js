@@ -16,7 +16,6 @@ function validarSessao() {
         }
         nome_funcionario.innerHTML = nome;
         nome_empresa.innerHTML = empresa;
-        span_cadastro = `<li><a href="telaCadastro.html" class="agora">Cadastro</a></li>` 
 
         // finalizarAguardar();
     } else {
