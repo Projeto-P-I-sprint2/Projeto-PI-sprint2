@@ -53,3 +53,9 @@ chave INT,
 FOREIGN KEY (fk_sensor) REFERENCES arduino(idarduino),
 PRIMARY KEY (IDarduino, fk_sensor)
 );
+
+INSERT INTO cargos
+VALUES
+(NULL, 'S'),
+(NULL, 'A'),
+(NULL, 'B');
