@@ -69,10 +69,6 @@
 
     window.onload = obterDadosGrafico(1);
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    verificar_autenticacao();
-
     function alterarTitulo(idSala) {
         var tituloAquario = document.getElementById("tituloAquario")
         tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idSala + "</span>"
@@ -233,4 +229,11 @@
 <script>
     nome_funcionario.innerHTML = sessionStorage.NOME_USUARIO;
     nome_empresa.innerHTML = sessionStorage.NOME_EMPRESA;
+
+    var cargo = sessionStorage.ID_CARGO;
+
+    if (cargo == 1 || cargo == 2) {
+            span_cadastro.innerHTML = `<li><a href="telaCadastro.html" class="agora">Cadastro</a></li>`;
+        
+        }
 </script>
