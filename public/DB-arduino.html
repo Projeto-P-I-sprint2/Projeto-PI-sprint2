@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="CSS/IMGS/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/script.js"></script>
     <!-- script das dashboard com api -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
@@ -26,8 +28,7 @@
 
 <body>
     <div class="welcome">
-        <h2>Bem vindo <span id="nome_funcionario"></span><br>
-        da empresa <span id="nome_empresa"></span></h2><br>
+        <h2>Bem vindo <span id="nome_funcionario"></span></h2><br>
         <h2>Cadastre os funcionarios da sua empresa</h2>
 
         <ul class="navbar">
@@ -70,3 +71,7 @@
 </body>
 
 </html>
+
+<script>
+        nome_funcionario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>

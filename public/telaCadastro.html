@@ -17,13 +17,12 @@
     <div class="colocar-lado">
 
         <div class="welcome">
-            <h2>Bem vindo <span id="nome_funcionario"></span><br>
-            da empresa <span id="nome_empresa"></span></h2><br>
+            <h2>Bem vindo <span id="nome_funcionario"></span></h2><br>
             <h2>Cadastre os funcionarios da sua empresa</h2>
 
             <ul class="navbar">
-                <li><a href="dashboard.html">Sala A-1</a></li>
-                <li><a href="dashboardA2.html" class="alertaLa">Sala A-2</a></li>
+                <li><a href="dashboard-db.html">Sala A-1</a></li>
+                <li><a href="DB-arduino.html" class="alertaLa">Sala A-2</a></li>
                 <li><a class="alertaAzulEsc" href="dashboardA3.html">Sala A-3</a></li>
                 <li><a href="DB-arduino.html">Sprint-2</a></li>
                 <li><a href="telaCadastro.html" class="agora">Cadastro</a></li>
@@ -131,7 +130,6 @@
 <script>
     function cadastrar() {
 
-
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
@@ -140,7 +138,7 @@
         var dataVar = data_input.value;
         var cargoVar = Number(cargo_select.value);
         var senhaVar = senha_input.value;
-        var empresaVar = 1
+        var empresaVar = 1;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || cpfVar == "" || emailVar == "" ||
@@ -239,4 +237,8 @@
         cardErro.style.display = "none"
     }
 
+</script>
+
+<script>
+    nome_funcionario.innerHTML = sessionStorage.NOME_USUARIO;
 </script>
