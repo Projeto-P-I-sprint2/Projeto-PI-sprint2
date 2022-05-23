@@ -17,7 +17,8 @@
     <div class="colocar-lado">
 
         <div class="welcome">
-            <h2>Bem vindo <span id="nome_funcionario"></span></h2><br>
+            <h2>Bem vindo <span id="nome_funcionario"></span><br>
+            Da empresa <span id="nome_empresa"></span></h2><br>
             <h2>Cadastre os funcionarios da sua empresa</h2>
 
             <ul class="navbar">
@@ -138,7 +139,7 @@
         var dataVar = data_input.value;
         var cargoVar = Number(cargo_select.value);
         var senhaVar = senha_input.value;
-        var empresaVar = 1;
+        var empresaVar = sessionStorage.ID_EMPRESA;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || cpfVar == "" || emailVar == "" ||
@@ -241,4 +242,5 @@
 
 <script>
     nome_funcionario.innerHTML = sessionStorage.NOME_USUARIO;
+    nome_empresa.innerHTML = sessionStorage.NOME_EMPRESA;
 </script>

@@ -139,6 +139,9 @@ function entrar() {
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nomeFuncionario;
                     sessionStorage.ID_USUARIO = json.IDfuncionario;
+                    sessionStorage.NOME_EMPRESA = json.nomeEmpresa;
+                    sessionStorage.ID_EMPRESA = json.IDempresa;
+                    sessionStorage.ID_CARGO = json.IDcargo;
                     msg_erro.innerHTML="Login realizado com sucesso! Aguarde...";
                     setTimeout(function () {
                         window.location = "./DB-arduino.html";

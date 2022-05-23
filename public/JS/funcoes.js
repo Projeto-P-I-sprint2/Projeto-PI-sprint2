@@ -5,6 +5,7 @@ function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var empresa = sessionStorage.NOME_EMPRESA;
+    var cargo = sessionStorage.ID_CARGO; 
 
     var h1LoginUsuario = document.getElementById("nome_empresa");
 
@@ -15,6 +16,7 @@ function validarSessao() {
         }
         nome_funcionario.innerHTML = nome;
         nome_empresa.innerHTML = empresa;
+        span_cadastro = `<li><a href="telaCadastro.html" class="agora">Cadastro</a></li>` 
 
         // finalizarAguardar();
     } else {

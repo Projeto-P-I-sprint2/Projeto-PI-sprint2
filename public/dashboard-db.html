@@ -27,7 +27,8 @@
 
 <body onload="validarSessao(), atualizarFeed()">
     <div class="welcome">
-        <h2>Bem vindo <span id="nome_funcionario"></span>></h2><br>
+        <h2>Bem vindo <span id="nome_funcionario"></span><br>
+            Da empresa <span id="nome_empresa"></span></h2><br>
         <h2>Cadastre os funcionarios da sua empresa</h2>
 
         <ul class="navbar">
@@ -35,7 +36,7 @@
             <li><a href="DB-arduino.html" class="alertaLa">Sala A-2</a></li>
             <li><a class="alertaAzulEsc" href="dashboardA3.html">Sala A-3</a></li>
             <li><a href="DB-arduino.html">Sprint-2</a></li>
-            <li><a href="telaCadastro.html">Cadastro</a></li>
+            <span id="span_cadastro"></span>
             <li><a onclick="limparSessao()">Sair</a></li>
 
         </ul>
@@ -231,4 +232,5 @@
 
 <script>
     nome_funcionario.innerHTML = sessionStorage.NOME_USUARIO;
+    nome_empresa.innerHTML = sessionStorage.NOME_EMPRESA;
 </script>
