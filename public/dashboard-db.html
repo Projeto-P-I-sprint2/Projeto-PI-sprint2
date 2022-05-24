@@ -32,7 +32,7 @@
         <h2>Cadastre os funcionarios da sua empresa</h2>
 
         <ul class="navbar">
-            <li><a class="agora" href="dashboard-db.html">Sala A-1</a></li>
+            <li><a class="agora" href="dashboard-db.html" onclick="obterDadosGrafico(1)">Sala A-1</a></li>
             <li><a href="DB-arduino.html" class="alertaLa">Sala A-2</a></li>
             <li><a class="alertaAzulEsc" href="dashboardA3.html">Sala A-3</a></li>
             <li><a href="DB-arduino.html">Sprint-2</a></li>
@@ -119,8 +119,8 @@
             labels: [],
             datasets: [
                 {
-                    yAxisID: 'y-umidade',
-                    label: 'Umidade',
+                    yAxisID: 'y-luminosidade',
+                    label: 'luminosidade',
                     borderColor: '#32B9CD',
                     backgroundColor: '#32b9cd8f',
                     fill: true,
@@ -132,7 +132,7 @@
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             dados.labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[0].data.push(registro.luminosidade);
             dados.datasets[1].data.push(registro.temperatura);
         }
 
@@ -165,7 +165,7 @@
                         type: 'linear',
                         display: false,
                         position: 'right',
-                        id: 'y-umidade',
+                        id: 'y-luminosidade',
                         ticks: {
                             beginAtZero: true,
                             max: 100,
@@ -203,7 +203,7 @@
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+                    dados.datasets[0].data.push(novoRegistro[0].luminosidade); // incluir uma nova medida de umidade
 
                     dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura

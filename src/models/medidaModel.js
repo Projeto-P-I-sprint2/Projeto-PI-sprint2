@@ -11,7 +11,7 @@ function buscarUltimasMedidas(idSala, limite_linhas) {
                         data_hora,
                         CONVERT(varchar, data_hora, 108) as momento_grafico
                     from historico
-                    join arduino on arduino.IDarduino = historico.fk_arduino
+                    join arduino on arduino.IDarduino = historico.fk_sensor
                     where fk_sala = ${idSala}
                     order by IDhistorico desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
@@ -21,7 +21,7 @@ function buscarUltimasMedidas(idSala, limite_linhas) {
                         data_hora,
                         DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico
                         from historico
-                        join arduino on arduino.IDarduino = historico.fk_arduino
+                        join arduino on arduino.IDarduino = historico.fk_sensor
                         where fk_sala = ${idSala}
                     order by IDhistorico desc limit ${limite_linhas}`;
     } else {
@@ -43,7 +43,7 @@ function buscarMedidasEmTempoReal(idSala) {
         luminosidade as luminosidade,  
                         CONVERT(varchar, data_hora, 108) as momento_grafico, 
                         from historico
-                        join arduino on arduino.IDarduino = historico.fk_arduino
+                        join arduino on arduino.IDarduino = historico.fk_sensor
                         where fk_sala = ${idSala}
                     order by IDhistorico desc`;
 
@@ -53,7 +53,7 @@ function buscarMedidasEmTempoReal(idSala) {
         luminosidade as luminosidade,
                         DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico, 
                         from historico
-                        join arduino on arduino.IDarduino = historico.fk_arduino
+                        join arduino on arduino.IDarduino = historico.fk_sensor
                         where fk_sala = ${idSala}
                     order by IDhistorico desc limit 1`;
     } else {
