@@ -29,7 +29,7 @@
     <div class="welcome">
         <h2>Bem vindo <span id="nome_funcionario"></span><br>
             Da empresa <span id="nome_empresa"></span></h2><br>
-        <h2>Cadastre os funcionarios da sua empresa</h2>
+        <h2>Medidas referentes as suas salas</h2>
 
         <ul class="navbar">
             <li><button class="agora" href="dashboard-db.html" onclick="obterDadosGrafico(1)">Sala A-1</button></li>
@@ -57,16 +57,27 @@
     </div>
 
     <div class="graph">
-        
+
     </div>
 
     <div class="corpo funcional" id="id_temp">
         <div class="dashboard funcional">
-            <canvas id="canvas_grafico" style="height: 20px;"></canvas>
+            <div style="width: 90%; display: flex; justify-content: center">
+                <canvas id="canvas_grafico"></canvas>
+            </div>
         </div>
         <div class="card">
             <p>Temperatura atual</p><br>
             <h1>-°C</h1>
+        </div>
+    </div>
+
+    <div class="corpo funcional" id="id_lum">
+        <div class="card">
+            <p>Luminosidade atual</p><br>
+            <h1>- Lux</h1>
+        </div>
+        <div class="dashboard funcional">
         </div>
     </div>
 
@@ -85,7 +96,7 @@
 
     function alterarTitulo(idSala) {
         var tituloAquario = document.getElementById("tituloAquario")
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idSala + "</span>"
+        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Luminosidade da <span style='color: #e6005a'>Sala " + idSala + "</span>"
     }
 
     // O gráfico é construído com três funções:
@@ -135,8 +146,8 @@
                 {
                     yAxisID: 'y-luminosidade',
                     label: 'luminosidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
+                    borderColor: '#4C1AA1',
+                    backgroundColor: '#9982C2',
                     fill: true,
                     data: []
                 },
@@ -144,7 +155,7 @@
                     yAxisID: 'y-temperatura',
                     label: 'Temperatura',
                     borderColor: '#FFF',
-                    backgroundColor: '#32b9cd8f',
+                    backgroundColor: '#4C1AA1',
                     fill: true,
                     data: []
                 }
@@ -223,10 +234,10 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-                    
+
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].luminosidade); // incluir uma nova medida de umidade
-                    
+
                     dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
@@ -255,7 +266,7 @@
     var cargo = sessionStorage.ID_CARGO;
 
     if (cargo == 1 || cargo == 2) {
-            span_cadastro.innerHTML = `<li><a href="telaCadastro.html" class="agora">Cadastro</a></li>`;
-        
-        }
+        span_cadastro.innerHTML = `<li><a href="telaCadastro.html" class="agora">Cadastro</a></li>`;
+
+    }
 </script>
