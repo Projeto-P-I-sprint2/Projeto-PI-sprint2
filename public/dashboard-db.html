@@ -75,7 +75,7 @@
     <div class="corpo funcional" id="id_lum">
         <div class="card">
             <p>Luminosidade atual</p><br>
-            <h1>- Lux</h1>
+            <h1 id="lum_atual">- Lux</h1>
         </div>
         <div class="dashboard funcional">
             <div style="width: 90%; display: flex; justify-content: center">
@@ -301,6 +301,9 @@
 
                     window.grafico_linha.update();
                     window.grafico_linha2.update();
+
+                    temp_atual.innerHTML = `${dados.datasets[0].data[dados.datasets[0].data.length - 1]} °C`
+                    lum_atual.innerHTML = `${dados2.datasets[0].data[dados2.datasets[0].data.length - 1]} Lux`
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idSala, dados, dados2), 2000);
