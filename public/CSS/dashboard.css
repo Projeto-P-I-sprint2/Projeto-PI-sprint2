@@ -39,7 +39,7 @@ body {
     margin-right: 100px;
 }
 
-.navbar a {
+.navbar a, .navbar button {
     text-decoration: none;
     margin-top: 2%;
     border: none;
@@ -52,9 +52,10 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar button:hover {
     background-color: #4C1AA1;
     padding: 10px 10px;
     color: #FFFFFF;
@@ -65,7 +66,7 @@ a.agora {
     background-color: #2D086E;
 }
 
-a.btn_cad {
+a.btn_cad, button.btn_cad {
     text-decoration: none;
     margin-top: 2%;
     border: none;
@@ -139,7 +140,7 @@ a.btn_cad {
 
 .box1 {
     width: 130px;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
     margin-left: 10px;
     display: flex;
@@ -153,7 +154,7 @@ a.btn_cad {
 
 .box2 {
     width: 130px;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
     margin-left: 10px;
     display: flex;
@@ -167,7 +168,7 @@ a.btn_cad {
 
 .box3 {
     width: 210px;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
     margin-left: 10px;
     display: flex;
@@ -181,7 +182,7 @@ a.btn_cad {
 
 .box4 {
     width: 130px;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
     margin-left: 10px;
     display: flex;
@@ -195,7 +196,7 @@ a.btn_cad {
 
 .box5 {
     width: 130px;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
     margin-left: 10px;
     display: flex;
@@ -235,6 +236,13 @@ a.btn_cad {
 
 .dashboard{
     width: 55%;
+}
+
+#formatacao-texto {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .alertaLa{

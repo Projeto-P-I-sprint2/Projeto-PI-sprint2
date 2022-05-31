@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -18,14 +18,14 @@
 
         <div class="welcome">
             <h2>Bem vindo <span id="nome_funcionario"></span><br>
-            Da empresa <span id="nome_empresa"></span></h2><br>
+                Da empresa <span id="nome_empresa"></span></h2><br>
             <h2>Cadastre os funcionarios da sua empresa</h2>
 
             <ul class="navbar">
-                <li><a href="dashboard-db.html">Sala A-1</a></li>
-                <li><a href="DB-arduino.html" class="alertaLa">Sala A-2</a></li>
-                <li><a class="alertaAzulEsc" href="dashboardA3.html">Sala A-3</a></li>
-                <li><a href="DB-arduino.html">Sprint-2</a></li>
+                <li><button href="dashboard-db.html" onclick="obterDadosGrafico(1)">Sala A-1</button></li>
+                <li><button href="dashboard-db.html" onclick="obterDadosGrafico(2)">Sala A-2</button></li>
+                <li><button href="dashboard-db.html" onclick="obterDadosGrafico(3)">Sala B-1</button></li>
+                <li><button href="dashboard-db.html" onclick="obterDadosGrafico(4)">Sala B-2</button></li>
                 <li><a href="telaCadastro.html" class="agora">Cadastro</a></li>
                 <li><a onclick="limparSessao()">Sair</a></li>
 
@@ -220,7 +220,7 @@
                 setTimeout(function () {
 
 
-                    window.location.href = "./telaLogin.html";
+                    window.location.href = "./dashboard-db.html";
                     limparFormulario();
                     finalizarAguardar();
                 }, 5000);

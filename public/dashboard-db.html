@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -25,17 +25,17 @@
 
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">
-    <div class="welcome">
+<body onload="validarSessao(), atualizarFeed(), atualizacaoPeriodica()">
+    <div class="welcome" style="height: 110vh;">
         <h2>Bem vindo <span id="nome_funcionario"></span><br>
             Da empresa <span id="nome_empresa"></span></h2><br>
         <h2>Medidas referentes as suas salas</h2>
 
         <ul class="navbar">
-            <li><button class="agora" href="dashboard-db.html" onclick="obterDadosGrafico(1)">Sala A-1</button></li>
-            <li><a href="DB-arduino.html" class="alertaLa">Sala A-2</a></li>
-            <li><a class="alertaAzulEsc" href="dashboardA3.html">Sala A-3</a></li>
-            <li><a href="DB-arduino.html">Sprint-2</a></li>
+            <li><button id="button_um" onclick="obterDadosGrafico(1)">Sala A-1</button></li>
+            <li><button onclick="obterDadosGrafico(2)">Sala A-2</button></li>
+            <li><button onclick="obterDadosGrafico(3)">Sala B-1</button></li>
+            <li><button onclick="obterDadosGrafico(4)">Sala B-2</button></li>
             <span id="span_cadastro"></span>
             <li><a onclick="limparSessao()">Sair</a></li>
 
@@ -50,7 +50,7 @@
         <div class="box5"><span>Critico<br>(28°C)(900Lux)</span></div>
     </div>
 
-    <div>
+    <div id="formatacao-texto">
         <h3 class="tituloGraficos">
             <span id="tituloAquario">123</span>
         </h3>
@@ -68,7 +68,7 @@
         </div>
         <div class="card">
             <p>Temperatura atual</p><br>
-            <h1>-°C</h1>
+            <h1 id="temp_atual">-°C</h1>
         </div>
     </div>
 
@@ -78,8 +78,10 @@
             <h1>- Lux</h1>
         </div>
         <div class="dashboard funcional">
+            <div style="width: 90%; display: flex; justify-content: center">
+                <canvas id="canvas_grafico2"></canvas>
+            </div>
         </div>
-    </div>
 
 </body>
 
@@ -144,14 +146,6 @@
             labels: [],
             datasets: [
                 {
-                    yAxisID: 'y-luminosidade',
-                    label: 'luminosidade',
-                    borderColor: '#4C1AA1',
-                    backgroundColor: '#9982C2',
-                    fill: true,
-                    data: []
-                },
-                {
                     yAxisID: 'y-temperatura',
                     label: 'Temperatura',
                     borderColor: '#FFF',
@@ -162,11 +156,26 @@
             ]
         };
 
+        var dados2 = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-luminosidade',
+                    label: 'luminosidade',
+                    borderColor: '#4C1AA1',
+                    backgroundColor: '#9982C2',
+                    fill: true,
+                    data: []
+                }
+            ]
+        };
+
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             dados.labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.luminosidade);
-            dados.datasets[1].data.push(registro.temperatura);
+            dados2.labels.push(registro.momento_grafico);
+            dados2.datasets[0].data.push(registro.luminosidade);
+            dados.datasets[0].data.push(registro.temperatura);
         }
 
         console.log(JSON.stringify(dados));
@@ -213,7 +222,49 @@
             }
         });
 
-        setTimeout(() => atualizarGrafico(idSala, dados), 2000);
+        var ctx2 = canvas_grafico2.getContext('2d');
+        window.grafico_linha2 = Chart.Line(ctx2, {
+            data: dados2,
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 1000,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-luminosidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 1000,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+
+        setTimeout(() => atualizarGrafico(idSala, dados, dados2), 2000);
     }
 
 
@@ -222,7 +273,7 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idSala, dados) {
+    function atualizarGrafico(idSala, dados, dados2) {
 
         fetch(`/medidas/tempo-real/${idSala}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -231,25 +282,33 @@
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                     console.log(`Dados atuais do gráfico: ${dados}`);
 
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados2}`);
+
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
-                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[0].data.push(novoRegistro[0].luminosidade); // incluir uma nova medida de umidade
+                    // tirando e colocando valores no gráfico
+                    dados2.labels.shift(); // apagar o primeiro
+                    dados2.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
-                    dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+                    dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                    dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+                    dados2.datasets[0].data.shift();  // apagar o primeiro de umidade
+                    dados2.datasets[0].data.push(novoRegistro[0].luminosidade); // incluir uma nova medida de umidade
 
                     window.grafico_linha.update();
+                    window.grafico_linha2.update();
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idSala, dados), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idSala, dados, dados2), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idSala, dados), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idSala, dados, dados2), 2000);
             }
         })
             .catch(function (error) {
@@ -266,7 +325,7 @@
     var cargo = sessionStorage.ID_CARGO;
 
     if (cargo == 1 || cargo == 2) {
-        span_cadastro.innerHTML = `<li><a href="telaCadastro.html" class="agora">Cadastro</a></li>`;
+        span_cadastro.innerHTML = `<li><a href="telaCadastro.html">Cadastro</a></li>`;
 
     }
 </script>
