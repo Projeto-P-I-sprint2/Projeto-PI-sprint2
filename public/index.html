@@ -8,6 +8,8 @@
     <title>COMPROD | Inicio</title>
     <link rel="shortcut icon" href="CSS/IMGS/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/modal.css">
+    <script src="JS/modal.js"></script>
 </head>
 
 <body>
@@ -36,7 +38,7 @@
                 <h1>QUEM SOMOS</h1>
                 <p>Somos uma empresa de tecnologia <br>
                     idealizada para aumentar a produtividade</p>
-                <button>Ler mais</button>
+                <button onclick="saibaMais()">Ler mais</button>
             </div>
         </div>
         <div class="corpo">
@@ -46,7 +48,7 @@
                     <h1>HARDWARE</h1>
                     <p>VENHA CONHECER NOSSO
                         INCRIVEL E POTENTE HARDWARE </p>
-                    <button>Ler mais</button><br>
+                    <button onclick="apresentarHardware()">Ler mais</button><br>
                 </div>
                 <div class="card">
                     <img src="CSS/IMGS/SOFTWARE.png" alt="">
@@ -54,7 +56,7 @@
                     <p>UTILIZE NOSSO SITE PARA
                         CONTROLAR E VERIFICAR
                         SUA EFICIÊNCIA </p>
-                    <button>Ler mais</button>
+                    <button onclick="apresentarSoftware()">Ler mais</button>
                 </div>
             </div>
         </div>
@@ -121,6 +123,13 @@
     </div>
     <div class="direitos container">
         <p>COMPROD &copy;2022</p>
+    </div>
+
+    <div id="bg"></div>
+    <div class="box">
+        <a href="#Valores" id="close">X</a>
+        <h4 id="titulo"></h4>
+        <span id="texto"></span>
     </div>
 </body>
 <script src="JS/script.js"></script>
