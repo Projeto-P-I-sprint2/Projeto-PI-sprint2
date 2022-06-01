@@ -96,6 +96,18 @@ a.btn_cad, button.btn_cad {
     margin-top: 40px;
 }
 
+.corpo.funcional.cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.container_cards_duplas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .corpo .dashboard.funcional{
     width: 60%;
 }
@@ -210,8 +222,15 @@ a.btn_cad, button.btn_cad {
 
 .boxes {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
 
+}
+
+.boxes_box {
+    display: flex;
+    justify-content: center;
 }
 
 .welcome {
@@ -245,18 +264,36 @@ a.btn_cad, button.btn_cad {
     justify-content: center;
 }
 
-.alertaLa{
+.perigo-frio {
+    background-color: #0014ad;
+  }
+  
+  .perigo-quente {
+    background-color: #F80000;
+  }
+  
+  .alerta-frio {
+    background-color: #1898E2;
+  }
+  
+  .alerta-quente {
     background-color: #FD7A00;
-}
-a.alertaLa{
-    background-color: #FD7A00;
-}
-.alertaVer{
+  }
+  
+  .ideal {
     background-color: #07BD04;
-}
-a.alertaAzulEsc{
-    background-color: #0014ad;
-}
-.alertaAzulEsc{
-    background-color: #0014ad;
-}
+  }
+
+  .cor-alerta {
+    display: flex;
+    flex-direction: column;
+    width: 17vw;
+    height: 200px;
+    margin: 25px;
+    border: #000000 solid 2px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    /* background-color: #9982C2; */
+    text-align: center;
+    justify-content: start;  
+  }

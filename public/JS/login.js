@@ -57,7 +57,7 @@ function validarSessao() {
     var empresa = sessionStorage.NOME_EMPRESA;
     var cargo = sessionStorage.ID_CARGO;
 
-    var botao = `<li><a href="telaCadastro.html" class="agora">Cadastro</a></li>`
+    var botao = `<li><a href="telaCadastro.html">Cadastro</a></li>`
 
     var h1Titulo = document.getElementById("nome_empresa");
     var spanCadastro = document.getElementById("span_cadastro");

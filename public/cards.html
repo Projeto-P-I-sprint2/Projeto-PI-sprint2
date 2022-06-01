@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPROD | Dashboard</title>
+    <link rel="shortcut icon" href="CSS/IMGS/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/dashboard.css">
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- script das dashboard com api -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+
+</head>
+
+<body onload="validarSessao(), atualizacaoPeriodica()">
+    <div class="welcome" style="height: 190vh;">
+        <h2>Bem vindo <span id="nome_funcionario"></span><br>
+            Da empresa <span id="nome_empresa"></span></h2><br>
+        <h2>Medidas referentes as suas salas</h2>
+
+        <ul class="navbar">
+            <li><a href="cards.html" class="agora">Cards salas</a></li>
+            <li><a href="dashboard-db.html">Gráficos</a></li>
+            <span id="span_cadastro"></span>
+            <li><a onclick="limparSessao()">Sair</a></li>
+
+        </ul>
+    </div>
+
+    <div class="boxes">
+        <h3>Temperatura</h3>
+        <div class="boxes_box">
+            <div class="box1"><span>Critico<br>16°C</span></div>
+            <div class="box2"><span>Alerta<br>18°C</span></div>
+            <div class="box3"><span>Agradavel<br>20°C/23°C</span></div>
+            <div class="box4"><span>Alerta<br>25°C</span></div>
+            <div class="box5"><span>Critico<br>28°C</span></div>
+        </div>
+    </div>
+    <div class="boxes">
+        <h3>Luminosidade</h3>
+        <div class="boxes_box">
+            <div class="box1"><span>Critico<br>300Lux</span></div>
+            <div class="box2"><span>Alerta<br>430Lux</span></div>
+            <div class="box3"><span>Agradavel<br>550/700Lux</span></div>
+            <div class="box4"><span>Alerta<br>750Lux</span></div>
+            <div class="box5"><span>Critico<br>950Lux</span></div>
+        </div>
+    </div>
+
+    <div class="graph">
+
+    </div>
+
+    <div class="corpo funcional cards" id="id_temp">
+        <div class="container_cards_duplas">
+            <div class="cor-alerta" id="card_1">
+                <p>Temperatura atual sala 1</p><br>
+                <h1 id="temp_aquario_1">-°C</h1>
+            </div>
+            <div class="cor-alerta" id="card_5">
+                <p>Luminosidade atua sala 1</p><br>
+                <h1 id="lum_atual_1">- Lux</h1>
+            </div>
+        </div>
+        <div class="container_cards_duplas">
+            <div class="cor-alerta" id="card_2">
+                <p>Temperatura atual sala 2</p><br>
+                <h1 id="temp_aquario_2">-°C</h1>
+            </div>
+            <div class="cor-alerta" id="card_6">
+                <p>Luminosidade atual sala 2</p><br>
+                <h1 id="lum_atual_2">- Lux</h1>
+            </div>
+        </div>
+    </div>
+    <div class="corpo funcional cards" id="id_lum">
+        <div class="container_cards_duplas">
+            <div class="cor-alerta" id="card_3">
+                <p>Temperatura atual sala 3</p><br>
+                <h1 id="temp_aquario_3">-°C</h1>
+            </div>
+            <div class="cor-alerta" id="card_7">
+                <p>Luminosidade atual sala 3</p><br>
+                <h1 id="lum_atual_3">- Lux</h1>
+            </div>
+        </div>
+        <div class="container_cards_duplas">
+            <div class="cor-alerta" id="card_4">
+                <p>Temperatura atual sala 4</p><br>
+                <h1 id="temp_aquario_4">-°C</h1>
+            </div>
+            <div class="cor-alerta" id="card_8">
+                <p>Luminosidade atual sala 4</p><br>
+                <h1 id="lum_atual_4">- Lux</h1>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function atualizacaoPeriodica() {
+        obterdados(1);
+        obterdados(2);
+        obterdados(3);
+        obterdados(4);
+
+        setTimeout(atualizacaoPeriodica, 2000);
+    }
+
+    function obterdados(idSala) {
+        fetch(`/medidas/tempo-real/${idSala}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(resposta => {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var dados = {
+                            temperatura: resposta[0].temperatura,
+                            luminosidade: resposta[0].luminosidade,
+                        }
+
+                        alertar(resposta[0].temperatura, resposta[0].luminosidade, idSala);
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function alertar(temperatura, luminosidade, idSala) {
+        var limites = {
+            muito_quente: 28,
+            quente: 25,
+            ideal: 22,
+            frio: 18,
+            muito_frio: 16,
+            muita_luz: 950,
+            luz_forte: 830,
+            luz_ideal: 650,
+            pouca_luz: 430,
+            escuro: 300,
+        };
+
+        var classe_temperatura = 'cor-alerta';
+
+        if (temperatura >= limites.muito_quente) {
+            classe_temperatura = 'cor-alerta perigo-quente';
+            console.log("caiu no 1")
+        }
+        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
+            classe_temperatura = 'cor-alerta alerta-quente';
+            console.log("caiu no 2")
+        }
+        else if (temperatura < limites.quente && temperatura > limites.frio) {
+            classe_temperatura = 'cor-alerta ideal';
+            console.log("caiu no 3")
+        }
+        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
+            classe_temperatura = 'cor-alerta alerta-frio';
+            console.log("caiu no 4")
+        }
+        else if (temperatura < limites.muito_frio) {
+            classe_temperatura = 'cor-alerta perigo-frio';
+            console.log("caiu no 5")
+        }
+
+        var classe_luminosidade = 'cor-alerta';
+
+        if (luminosidade >= limites.muita_luz) {
+            classe_luminosidade = 'cor-alerta perigo-quente';
+            console.log("caiu no 1")
+        }
+        else if (luminosidade < limites.muita_luz && luminosidade >= limites.luz_forte) {
+            classe_luminosidade = 'cor-alerta alerta-quente';
+            console.log("caiu no 2")
+        }
+        else if (luminosidade < limites.luz_forte && luminosidade > limites.pouca_luz) {
+            classe_luminosidade = 'cor-alerta ideal';
+            console.log("caiu no 3")
+        }
+        else if (luminosidade <= limites.pouca_luz && luminosidade > limites.escuro) {
+            classe_luminosidade = 'cor-alerta alerta-frio';
+            console.log("caiu no 4")
+        }
+        else if (luminosidade < limites.escuro) {
+            classe_luminosidade = 'cor-alerta perigo-frio';
+            console.log("caiu no 5")
+        }
+
+        var card;
+        var card2;
+
+        if (idSala == 1) {
+            temp_aquario_1.innerHTML = temperatura + "°C";
+            lum_atual_1.innerHTML = luminosidade + "Lux";
+            card = card_1
+            card2 = card_5
+        } else if (idSala == 2) {
+            temp_aquario_2.innerHTML = temperatura + "°C";
+            lum_atual_2.innerHTML = luminosidade + "Lux";
+            card = card_2
+            card2 = card_6
+        } else if (idSala == 3) {
+            temp_aquario_3.innerHTML = temperatura + "°C";
+            lum_atual_3.innerHTML = luminosidade + "Lux";
+            card = card_3
+            card2 = card_7
+        } else if (idSala == 4) {
+            temp_aquario_4.innerHTML = temperatura + "°C";
+            lum_atual_4.innerHTML = luminosidade + "Lux";
+            card = card_4
+            card2 = card_8
+        }
+
+        // alterando
+        card.className = classe_temperatura;
+        card2.className = classe_luminosidade;
+
+    }
+
+</script>
+
+<script>
+    nome_funcionario.innerHTML = sessionStorage.NOME_USUARIO;
+    nome_empresa.innerHTML = sessionStorage.NOME_EMPRESA;
+
+    var cargo = sessionStorage.ID_CARGO;
+
+    if (cargo == 1 || cargo == 2) {
+        span_cadastro.innerHTML = `<li><a href="telaCadastro.html">Cadastro</a></li>`;
+
+    }
+</script>
