@@ -42,7 +42,7 @@ CREATE TABLE arduino (
 );
 
 CREATE TABLE historico (
-  IDarduino INT auto_increment,
+  IDhistorico INT auto_increment,
   fk_sensor INT,
   data_hora datetime DEFAULT CURRENT_TIMESTAMP,
   dht11_umidade DECIMAL (10, 2),
@@ -101,7 +101,7 @@ CREATE TABLE arduino (
 );
 
 CREATE TABLE historico (
-  IDarduino INT IDENTITY(1, 1),
+  IDhistorico INT IDENTITY(1, 1),
   fk_sensor INT FOREIGN KEY REFERENCES arduino(idarduino),
   data_hora DATETIME,
   dht11_umidade DECIMAL,

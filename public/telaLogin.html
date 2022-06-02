@@ -42,9 +42,6 @@
                     <input type="password" id="senha_input" placeholder="Senha">
                 </div>
                 <div class="filha">
-                    <a href="#">Esqueci minha senha</a>
-                </div>
-                <div class="filha">
                     <button type="submit" onclick="entrar()">Login</button>
                 </div>
                 <div>
@@ -154,6 +151,8 @@ function entrar() {
 
                 console.log("Houve um erro ao tentar realizar o login!");
                 msg_erro.innerHTMLL = "Email ou senha inválidos";
+
+                alert(`Email ou senha inválidos`)
 
                 resposta.text().then(texto => {
                     console.error(texto);
